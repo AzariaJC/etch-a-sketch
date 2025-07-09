@@ -1,0 +1,8 @@
+.square {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    background-color: lightgreen;
+    border: 2px solid black;
+    margin: 5px;
+}
