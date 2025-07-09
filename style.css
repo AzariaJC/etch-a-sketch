@@ -7,11 +7,8 @@
 
 .square {
   display: flex;
-  flex: 0 0 33.33%;
-  min-height: 50px;
-  min-width: 50px;
-  justify-content: space-between;
+  flex: 1 1 calc(6.25% - 8px);
+  height: 50px;
   background-color: lightgreen;
   border: 2px solid black;
-  margin: 2px;
 }
