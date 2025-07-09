@@ -1,5 +1,5 @@
 const container = document.querySelector("#container");
-const numberOfSquares = 16;
+const numberOfSquares = 256;
 
 for (let i = 0; i <= numberOfSquares; i++) {
     const squareDiv = document.createElement('div');
