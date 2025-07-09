@@ -9,12 +9,12 @@ for (let i = 0; i < numberOfSquares; i++) {
     container.appendChild(squareDiv)
 }
 
-const box = document.querySelectorAll('.square');
+const boxes = document.querySelectorAll('.square');
 
 function changeBackground(e) {
     e.currentTarget.style.backgroundColor = "black";
 };
 
-box.forEach(function(box){
-    addEventListener("mouseover", changeBackground);
+boxes.forEach(function(box){
+    box.addEventListener("mouseover", changeBackground);
 });
