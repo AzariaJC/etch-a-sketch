@@ -1,13 +1,15 @@
 const container = document.querySelector("#container");
-const numberOfSquares = 256;
+let numberOfSquares = 16;
 
 
 
-for (let i = 0; i < numberOfSquares; i++) {
+function generateSquares () {
+    for (let i = 0; i < numberOfSquares ** 2; i++) {
     const squareDiv = document.createElement('div');
     squareDiv.classList.add('square');
     container.appendChild(squareDiv)
 }
+};
 
 const boxes = document.querySelectorAll('.square');
 
@@ -18,3 +20,19 @@ function changeBackground(e) {
 boxes.forEach(function(box){
     box.addEventListener("mouseover", changeBackground);
 });
+
+const topButton = document.querySelector("#changeGrid");
+
+topButton.addEventListener("click", changeGridSize);
+
+function changeGridSize() {
+    let newGridSizeInput = prompt("Please input how many rows of squares you would like:", "ex: 10 will give you a 10 x 10 grid");
+    if (newGridSizeInput > 100) {
+        alert("That number is too high! Pick a number 100 or less.");
+    } else {
+        let newGridSizeInput = numberOfSquares;
+        generateSquares();
+    }
+};
+
+generateSquares();
