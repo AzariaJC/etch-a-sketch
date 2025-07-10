@@ -8,6 +8,12 @@ function generateSquares () {
     const squareDiv = document.createElement('div');
     squareDiv.classList.add('square');
     container.appendChild(squareDiv)
+    let square = document.querySelectorAll(".square");
+    square.style.backgroundColor = 'green';
+    square.style.border = "2px solid black";
+    square.style.display = "flex";
+    square.style.flex = '1 1 calc((100/numberOfSquares) - 8px)';
+    square.style.height = "50px";
 }
 };
 
@@ -30,7 +36,8 @@ function changeGridSize() {
     if (newGridSizeInput > 100) {
         alert("That number is too high! Pick a number 100 or less.");
     } else {
-        let newGridSizeInput = numberOfSquares;
+        numberOfSquares = newGridSizeInput;
+        container.replaceChildren();
         generateSquares();
     }
 };
