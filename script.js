@@ -1,5 +1,3 @@
-
-const container = document.querySelector("#container");
 function generateSquares(numberOfSquares, container) {
   for (let i = 0; i < numberOfSquares ** 2; i++) {
     const squareDiv = document.createElement("div");
@@ -10,6 +8,7 @@ function generateSquares(numberOfSquares, container) {
     squareDiv.style.display = "flex";
     squareDiv.style.flex = `1 1 calc((${100/numberOfSquares})% - 8px)`;
     squareDiv.style.height = "50px";
+    squareDiv.style.width = "50px";
     squareDiv.addEventListener("mouseover", changeBackground);
   }
 }
@@ -24,7 +23,7 @@ function changeGridSize(numberOfSquares, container) {
   } else {
     numberOfSquares = newGridSizeInput;
     container.replaceChildren();
-    generateSquares();
+    generateSquares(numberOfSquares, container);
   }
 }
 
@@ -33,6 +32,8 @@ function changeBackground(e) {
 }
 
 // ABOVE THIS LINE ARE ALL FUNCTIONS USED
+
+const container = document.querySelector("#container");
 const topButton = document.querySelector("#changeGrid");
 
 topButton.addEventListener("click", changeGridSize);
