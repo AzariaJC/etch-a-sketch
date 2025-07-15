@@ -6,24 +6,24 @@ function generateSquares(numberOfSquares, container) {
     squareDiv.style.backgroundColor = "green";
     squareDiv.style.border = "2px solid black";
     squareDiv.style.display = "flex";
-    squareDiv.style.flex = `1 1 calc((${100/numberOfSquares})% - 8px)`;
+    squareDiv.style.flex = `1 1 calc(((${100/numberOfSquares})%) - 8px)`;
     squareDiv.style.height = "50px";
     squareDiv.style.width = "50px";
     squareDiv.addEventListener("mouseover", changeBackground);
   }
 }
 
-function changeGridSize(numberOfSquares, container) {
+function changeGridSize() {
   let newGridSizeInput = prompt(
     "Please input how many rows of squares you would like:",
     "ex: 10 will give you a 10 x 10 grid"
   );
+  let container = document.querySelector('#container');
   if (newGridSizeInput > 100) {
     alert("That number is too high! Pick a number 100 or less.");
   } else {
-    numberOfSquares = newGridSizeInput;
     container.replaceChildren();
-    generateSquares(numberOfSquares, container);
+    generateSquares(newGridSizeInput, container);
   }
 }
 
